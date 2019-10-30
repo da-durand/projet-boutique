@@ -1,0 +1,20 @@
+header{
+    background-image: url(./img/Star-Citizen-banner.jpg);
+    background-size: cover;
+    color: rgb(139, 2, 2);
+}
+
+main{
+    background-image: url(./img/Space-Background.jpg);
+    color: lightgray;
+}
+
+h2{
+    background: rgba(255, 251, 0, 0.247);
+    color: black;
+}
+
+footer{
+    background: rgb(97, 97, 97);
+    color: white;
+}
