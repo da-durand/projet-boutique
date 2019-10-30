@@ -16,5 +16,51 @@ h2{
 
 footer{
     background: rgb(97, 97, 97);
+    color: rgb(255, 255, 255);
+}
+
+ul{
+    background: rgba(0, 0, 0, 0.658);
+    border-radius: 4px;
+}
+
+ul li a{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+ul li:hover{
+    background: rgb(139, 2, 2);
+    border-radius: 4px;
+}
+
+ul li a:hover{
     color: white;
+}
+
+.banner{
+    width: 100%;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+@media screen and (min-width: 1280px){
+    .header-container{
+        width: 75%;
+        margin: auto;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    nav{
+        width: 50%;
+    }
+
+    .banner{
+        width: 80%;
+    }
 }
