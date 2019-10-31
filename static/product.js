@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log(GET_PARAM("product_id"));
 
     var product = catalog[GET_PARAM("product_id")];
     $("h2").append(product.name);
