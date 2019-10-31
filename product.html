@@ -30,10 +30,10 @@
                             <a href="./catalog.html" class="text-decoration-none">Catalogue</a>
                         </li>
                         <li class="p-lg-1">
-                            <a href="#" class="text-decoration-none">Contact</a>
+                            <a href="./cart.html" class="text-decoration-none">Panier</a>
                         </li>
                         <li class="p-lg-1">
-                            <a href="cart.html" class="text-decoration-none">Panier</a>
+                            <a href="#" class="text-decoration-none">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -43,8 +43,8 @@
             <div class="main-container">
                 <div class="row">
                     <div class="col-12 col-md-9 col-lg-10">
-                        <h2>Red Dead Redemption 2</h2>
-                        <img src="./static/img/image.png" alt="" srcset="" class="mw-100">
+                        <h2></h2>
+                        <img src="" alt="" srcset="" class="mw-100 product-img">
                         <div id="carouselExampleIndicators" class="carousel slide p-5" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -52,21 +52,7 @@
                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <a href="#">
-                                        <img src="./static/img/image.png" class="d-block w-100" alt="...">
-                                    </a>
-                                </div>
-                                <div class="carousel-item">
-                                    <a href="#">
-                                        <img src="./static/img/image.png" class="d-block w-100" alt="...">
-                                    </a>
-                                </div>
-                                <div class="carousel-item">
-                                    <a href="#">
-                                        <img src="./static/img/image.png" class="d-block w-100" alt="...">
-                                    </a>
-                                </div>
+                               
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
                                 data-slide="prev">
@@ -81,10 +67,7 @@
                         </div>
                         <div>
                             <h4>Description du jeu</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda est provident
-                                consequuntur maxime labore libero voluptatem cumque itaque? Reiciendis dicta a possimus
-                                quod
-                                nemo sapiente. Fugiat eligendi qui nesciunt!Lorem</p>
+                            <p class="game-description"></p>
                         </div>
                         <div>
                             <h4>Performance</h4>
@@ -112,17 +95,17 @@
                     <div class="col-12 col-md-3 col-lg-2">
                         <div>
                             <h4>Infos Produit</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi modi eligendi deleniti.
-                                Obcaecati ratione maxime officiis optio commodi assumenda totam, sapiente natus saepe
-                                dolorum veritatis ea libero soluta iusto repudiandae.</p>
-                            <p>Prix : 30$</p>
-                            <p>Stock : 5</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis maiores ratione corporis ad
+                                eos sapiente quibusdam et recusandae veniam molestiae sequi voluptatibus laboriosam
+                                aliquam, eum fugit? Doloribus esse doloremque fugit?</p>
+                            <p class="price">Prix : </p>
+                            <p class="stock">Stock : </p>
                         </div>
                         <div>
                             <div>
-                                <button>-</button>
-                                <p>01</p>
-                                <button>+</button>
+                                <button class="btn-rm">-</button>
+                                <p class="nb-cart"></p>
+                                <button class="btn-add">+</button>
                             </div>
                             <div>
                                 <button>Panier</button>
@@ -144,6 +127,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 <script src="./static/catalog.js"></script>
+<script src="./static/product.js"></script>
 <script src="./static/script.js"></script>
 
 </html>

@@ -1,6 +1,6 @@
 
 var product0 = {
-    name : "Produit 0",
+    name : "Red dead redemption 2",
     description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et egestas augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum maximus eros, a condimentum diam dapibus non. Ut tempus sapien at blandit hendrerit. Mauris vel vehicula orci. Donec non risus eu diam accumsan ornare a vel nunc. Etiam porta enim nisi, sit amet imperdiet lectus commodo eget. Nulla magna ex, dapibus sed rhoncus nec, auctor et ligula. In malesuada ante neque, quis condimentum sapien faucibus eget. Vestibulum in interdum ipsum. Duis ut lorem velit. Aenean congue cursus neque, eget egestas turpis mattis non. Mauris quis diam aliquet, blandit justo id, cursus eros. Sed et vulputate velit. Integer finibus lacus vel porta laoreet.",
     price : 45,
     quantity : 7,
@@ -10,7 +10,7 @@ var product0 = {
     
 
 var product1 = {
-    name : "Produit 1",
+    name : "Star Citizen",
     description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et egestas augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum maximus eros, a condimentum diam dapibus non. Ut tempus sapien at blandit hendrerit. Mauris vel vehicula orci. Donec non risus eu diam accumsan ornare a vel nunc. Etiam porta enim nisi, sit amet imperdiet lectus commodo eget. Nulla magna ex, dapibus sed rhoncus nec, auctor et ligula. In malesuada ante neque, quis condimentum sapien faucibus eget. Vestibulum in interdum ipsum. Duis ut lorem velit. Aenean congue cursus neque, eget egestas turpis mattis non. Mauris quis diam aliquet, blandit justo id, cursus eros. Sed et vulputate velit. Integer finibus lacus vel porta laoreet.",
     price : 22,
     quantity : 6,
@@ -20,7 +20,7 @@ var product1 = {
     
 
 var product2 = {
-    name : "Produit 2",
+    name : "CyberPunk 2077",
     description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et egestas augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum maximus eros, a condimentum diam dapibus non. Ut tempus sapien at blandit hendrerit. Mauris vel vehicula orci. Donec non risus eu diam accumsan ornare a vel nunc. Etiam porta enim nisi, sit amet imperdiet lectus commodo eget. Nulla magna ex, dapibus sed rhoncus nec, auctor et ligula. In malesuada ante neque, quis condimentum sapien faucibus eget. Vestibulum in interdum ipsum. Duis ut lorem velit. Aenean congue cursus neque, eget egestas turpis mattis non. Mauris quis diam aliquet, blandit justo id, cursus eros. Sed et vulputate velit. Integer finibus lacus vel porta laoreet.",
     price : 33,
     quantity : 7,

@@ -78,6 +78,10 @@ h1{
     margin: 0;
 }
 
+.form-container{
+    width: 75%;
+}
+
 @media screen and (min-width: 768px){
     .cart-container{
         border-right: 2px white dashed;
@@ -103,5 +107,9 @@ h1{
 
     .banner{
         width: 80%;
+    }
+
+    .form-container{
+        width: 50%;
     }
 }
