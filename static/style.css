@@ -4,10 +4,20 @@ header{
     color: rgb(139, 2, 2);
 }
 
-main{
-    background-image: url(./img/Space-Background.jpg);
-    color: lightgray;
+@keyframes backgroundAnim {
+    0%{background-position:82% 0%}
+    50%{background-position:19% 100%}
+    100%{background-position:82% 0%}
 }
+
+main{
+    background-image: url(./img/cosmos-1853491_1920.jpg);
+    color: lightgray;
+    background-size: no-repeat;
+    background-attachment: fixed;
+    animation: backgroundAnim 60s ease infinite ;
+}
+
 
 h2{
     background: rgba(255, 251, 0, 0.247);
@@ -71,6 +81,9 @@ h1{
 @media screen and (min-width: 768px){
     .cart-container{
         border-right: 2px white dashed;
+    }
+    .cart-total{
+        position: fixed;
     }
 }
 
