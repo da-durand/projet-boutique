@@ -7,7 +7,7 @@ var GET_PARAM = function(name) {
 $(document).ready(function () {
 console.log("plop");
 
-    var page = GET_PARAM("page");
+    var page = parseInt(GET_PARAM("page"));
 
 
     var nbpage = Math.ceil(catalog.length / 12);
