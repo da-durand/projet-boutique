@@ -8,13 +8,14 @@ $(document).ready(function () {
         var quantity = cart[i].quantity;
         var total = price * quantity;
 
-        $(".cart-container").append("<div class='row article'>");
+        $(".cart-container").append("<div class='row article' id='art-"+i+"'>");
         $(".article:eq(" + i + ")").append("<div class='article-header col-12 col-md-6'>");
         $(".article:eq(" + i + ") .article-header").append("<h3>" + catalog[cart[i].productId].name + "</h3>");// ICI
 
         $(".article:eq(" + i + ") .article-header").append('<img src=' + catalog[cart[i].productId].thumb + ' alt="" srcset="" class="d-none d-md-block mw-100">');
 
         $(".article:eq(" + i + ")").append('<div class="col-12 col-md-6 d-flex align-items-center details">');
+        $(".article:eq(" + i + ") .details").append("<button class='delete' id='del-"+i+"'>Supprimer</button>");
         $(".article:eq(" + i + ") .details").append('<div class="row d-flex align-items-center justify-content-between w-100 price-u">');
         $(".article:eq(" + i + ") .price-u").append('<div class="col-4 col-md-4"> <p class="price-unite" id="price-' + i + '">' + catalog[cart[i].productId].price + '</p><p>€</p> </div>');
         $(".article:eq(" + i + ") .details").append('<div class="col-4 col-md-4 quantity-stock">');
@@ -24,6 +25,34 @@ $(document).ready(function () {
         $(".article:eq(" + i + ") .details").append('<div class="col-4 col-md-4">  <p class="total-price" id="total-' + i + '">' + total + '</p><p>€</p> </div>');
 
         totals.push(total);
+
+
+
+    $(".sup").click(function(){
+        
+        var btn = $(this).attr("id");
+        var sum = btn.replace("sup", "sum");
+        
+        var tempQuantity = parseInt($("#"+sum).html());
+        
+        if (tempQuantity < catalog[cart[i].productId].quantity) {
+            
+            var price = btn.replace("sup", "price");
+            var total = btn.replace("sup", "total");
+            
+            tempQuantity += 1;
+            $("#"+sum).html(tempQuantity);
+            
+            var priceRender = parseInt($("#"+price).html());
+            var sumRender = parseInt($("#"+sum).html());
+    
+            $("#"+total).html(priceRender * sumRender);
+    
+            renderTotal();
+            
+        }
+        
+    })
 
     };
 
@@ -36,7 +65,6 @@ $(document).ready(function () {
             ttc += parseFloat($(this).html());
         })
 
-
         var htc = (ttc / 1.2).toFixed(2)
 
         $('.total-container').html('<div class="col-12 col-md-3 col-lg-2 cart-total-container">');
@@ -48,9 +76,6 @@ $(document).ready(function () {
         $('.cart-total').append('<div class="col-6 col-md-12"> <button>Payer</button> </div>');
 
     }
-
-
-    // renderCart();
     
     for (let i = 0; i < cart.length; i++) {
         
@@ -61,49 +86,38 @@ $(document).ready(function () {
     renderTotal();
 
     $(".sub").click(function(){
-        var btn = $(this).attr("id");
-        var price = btn.replace("minus", "price");
-        var sum = btn.replace("minus", "sum");
-        var total = btn.replace("minus", "total");
+            
+            var btn = $(this).attr("id");
+            var sum = btn.replace("minus", "sum");
 
-        tempQuantity = parseInt($("#"+sum).html());
-        tempQuantity -= 1;
-        $("#"+sum).html(tempQuantity);
+            tempQuantity = parseInt($("#"+sum).html());
+
+            if (tempQuantity != 0) {
+
+                var price = btn.replace("minus", "price");
+                var total = btn.replace("minus", "total");
         
-        var priceRender = parseInt($("#"+price).html());
-        var sumRender = parseInt($("#"+sum).html());
-
-        $("#"+total).html(priceRender * sumRender);
-
-        renderTotal();
-
-        // console.log(tempPrice);
+                tempQuantity -= 1;
+                $("#"+sum).html(tempQuantity);
+                
+                var priceRender = parseInt($("#"+price).html());
+                var sumRender = parseInt($("#"+sum).html());
         
-        
-    })
+                $("#"+total).html(priceRender * sumRender);
+                
+                renderTotal();
 
-    $(".sup").click(function(){
-        
-        var btn = $(this).attr("id");
-        var price = btn.replace("sup", "price");
-        var sum = btn.replace("sup", "sum");
-        var total = btn.replace("sup", "total");
-
-        tempQuantity = parseInt($("#"+sum).html());
-        tempQuantity += 1;
-        $("#"+sum).html(tempQuantity);
-        
-        var priceRender = parseInt($("#"+price).html());
-        var sumRender = parseInt($("#"+sum).html());
-
-        $("#"+total).html(priceRender * sumRender);
-
-        renderTotal();
-        
-        // console.log(tempPrice);
-        
+            }
         
     })
+    
 
+    $(".delete").click(function(){
+        var btn = $(this).attr("id");
+        var article = btn.replace("del" , "art");
+        $("#" + article).remove();   
 
+        renderTotal();
+             
+    })
 })
