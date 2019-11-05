@@ -4,9 +4,9 @@ $(document).ready(function () {
 
     function renderCart(i) {
 
-        var price = catalog[cart[i].productId].price
-        var quantity = cart[i].quantity
-        var total = price * quantity
+        var price = catalog[cart[i].productId].price;
+        var quantity = cart[i].quantity;
+        var total = price * quantity;
 
         $(".cart-container").append("<div class='row article'>");
         $(".article:eq(" + i + ")").append("<div class='article-header col-12 col-md-6'>");
@@ -32,13 +32,14 @@ $(document).ready(function () {
 
         var ttc = 0;
 
-        for (let i = 0; i < totals.length; i++){
-            ttc += totals[i]
-        }
+        $(".total-price").each(function(){
+            ttc += parseFloat($(this).html());
+        })
+
 
         var htc = (ttc / 1.2).toFixed(2)
 
-        $('.total-container').append('<div class="col-12 col-md-3 col-lg-2 cart-total-container">');
+        $('.total-container').html('<div class="col-12 col-md-3 col-lg-2 cart-total-container">');
         $('.cart-total-container').append('<div class="row cart-total">');
         $('.cart-total').append(' <div class="col-6 col-md-12 cart-total-col">');
         $('.cart-total-col').append('<div class="row cart-total-row">');
@@ -53,24 +54,28 @@ $(document).ready(function () {
     
     for (let i = 0; i < cart.length; i++) {
         
-        renderCart(i)
+        renderCart(i);
         
     }
     
     renderTotal();
 
     $(".sub").click(function(){
-        var temp = $(this).attr("id")
-        var indice = temp[temp.length-1]
+        var btn = $(this).attr("id");
+        var price = btn.replace("minus", "price");
+        var sum = btn.replace("minus", "sum");
+        var total = btn.replace("minus", "total");
 
-        tempQuantity = parseInt($("#sum-"+indice).html());
+        tempQuantity = parseInt($("#"+sum).html());
         tempQuantity -= 1;
-        $("#sum-"+indice).html(tempQuantity)
+        $("#"+sum).html(tempQuantity);
         
-        var tempPrice = parseInt($("#price-"+indice).html());
-        var tempSum = parseInt($("#sum-"+indice).html())
+        var priceRender = parseInt($("#"+price).html());
+        var sumRender = parseInt($("#"+sum).html());
 
-        $("#total-"+indice).html(tempPrice * tempSum);
+        $("#"+total).html(priceRender * sumRender);
+
+        renderTotal();
 
         // console.log(tempPrice);
         
@@ -78,18 +83,23 @@ $(document).ready(function () {
     })
 
     $(".sup").click(function(){
-        var temp = $(this).attr("id")
-        var indice = temp[temp.length-1]
-
-        tempQuantity = parseInt($("#sum-"+indice).html());
-        tempQuantity += 1;
-        $("#sum-"+indice).html(tempQuantity)
         
-        var tempPrice = parseInt($("#price-"+indice).html());
-        var tempSum = parseInt($("#sum-"+indice).html())
+        var btn = $(this).attr("id");
+        var price = btn.replace("sup", "price");
+        var sum = btn.replace("sup", "sum");
+        var total = btn.replace("sup", "total");
 
-        $("#total-"+indice).html(tempPrice * tempSum)
+        tempQuantity = parseInt($("#"+sum).html());
+        tempQuantity += 1;
+        $("#"+sum).html(tempQuantity);
+        
+        var priceRender = parseInt($("#"+price).html());
+        var sumRender = parseInt($("#"+sum).html());
 
+        $("#"+total).html(priceRender * sumRender);
+
+        renderTotal();
+        
         // console.log(tempPrice);
         
         
