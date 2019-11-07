@@ -1,0 +1,115 @@
+header{
+    background-image: url(./img/Star-Citizen-banner.jpg);
+    background-size: cover;
+    color: rgb(139, 2, 2);
+}
+
+@keyframes backgroundAnim {
+    0%{background-position:82% 0%}
+    50%{background-position:19% 100%}
+    100%{background-position:82% 0%}
+}
+
+main{
+    background-image: url(./img/cosmos-1853491_1920.jpg);
+    color: lightgray;
+    background-size: no-repeat;
+    background-attachment: fixed;
+    animation: backgroundAnim 60s ease infinite ;
+}
+
+
+h2{
+    background: rgba(255, 251, 0, 0.247);
+    color: black;
+}
+
+footer{
+    background: rgb(97, 97, 97);
+    color: rgb(255, 255, 255);
+}
+
+ul{
+    background: rgba(0, 0, 0, 0.658);
+    border-radius: 4px;
+}
+
+ul li a{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+ul li:hover{
+    background: rgb(139, 2, 2);
+    border-radius: 4px;
+}
+
+ul li a:hover{
+    color: white;
+}
+
+.banner{
+    width: 100%;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+.cart-container h3{
+    background: rgba(255, 0, 0, 0.411);
+    border-radius: 5px;
+}
+
+.cart-container .article{
+    margin-bottom: 2rem;
+    border-bottom: 2px white dashed;
+    padding-bottom: 2rem;
+}
+
+.cart-container .article button{
+    background: black;
+    color: white;
+    border: 0;
+    border-radius: 10%;
+}
+
+.cart-container .article p {
+    margin: 0;
+}
+
+.form-container{
+    width: 75%;
+}
+
+@media screen and (min-width: 768px){
+    .cart-container{
+        border-right: 2px white dashed;
+    }
+    .cart-total{
+        position: fixed;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .header-container{
+        width: 75%;
+        margin: auto;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    nav{
+        width: 50%;
+    }
+
+    .banner{
+        width: 80%;
+    }
+
+    .form-container{
+        width: 50%;
+    }
+}

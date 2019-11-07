@@ -1,0 +1,9 @@
+.banner{
+    width: 100%;
+}
+
+@media screen and (min-width: 1280px){
+    .banner{
+        width: 80%;
+    }
+}

@@ -1,0 +1,32 @@
+.cart-container{
+    h3{
+        background: rgba(255, 0, 0, 0.411);
+        border-radius: 5px;
+    }
+
+    .article{
+        margin-bottom: 2rem;
+        border-bottom: 2px white dashed;
+        padding-bottom: 2rem;
+        
+        button{
+            background: black;
+            color: white;
+            border: 0;
+            border-radius: 10%;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    .cart-container{
+        border-right: 2px white dashed;
+    }
+    .cart-total{
+        position: fixed;
+    }
+}

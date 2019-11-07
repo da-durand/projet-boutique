@@ -1,0 +1,9 @@
+.form-container{
+    width: 75%;
+}
+
+@media screen and (min-width: 1280px){
+    .form-container{
+        width: 50%;
+    }
+}
