@@ -122,6 +122,19 @@ $(document).ready(function () {
         $("#" + article).remove();   
 
         renderTotal();
+    
+      var suppArticle = JSON.parse(sessionStorage.getItem("cart"));
+
+
+            var idtest = parseInt(btn.replace("del-" , ""));
+            
+            suppArticle[idtest]
+            
+          
+      
+
+        console.log(suppArticle[idtest]);
+    
              
     })
 })
