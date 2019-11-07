@@ -38,10 +38,25 @@ $(document).ready(function () {
         }
     })
 
+    
+    var cartList = sessionStorage.getItem("cart");
 
-    var cartList = [];
+    if (cartList == null) {
+        cartList = [];
+    }
+    else {
+        cartList = JSON.parse(cartList);
+    }
+    
+
+        
+
+
+
  
     $("#add-cart").click(function(){
+        
+
 
         var itemExist = false;
         
@@ -67,7 +82,7 @@ $(document).ready(function () {
 
 
 
-        sessionStorage.setItem("id_product", JSON.stringify(cartList));
+        sessionStorage.setItem("cart", JSON.stringify(cartList));
         
 
     })

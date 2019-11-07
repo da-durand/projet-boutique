@@ -2,22 +2,26 @@ $(document).ready(function () {
 
     var totals = [];
 
+    var cart = JSON.parse(sessionStorage.getItem("cart"));
+    console.log(cart);
+    
+
     function renderCart(i) {
 
-        var price = catalog[cart[i].productId].price;
+        var price = catalog[cart[i].product_id].price;
         var quantity = cart[i].quantity;
         var total = price * quantity;
 
         $(".cart-container").append("<div class='row article' id='art-"+i+"'>");
         $(".article:eq(" + i + ")").append("<div class='article-header col-12 col-md-6'>");
-        $(".article:eq(" + i + ") .article-header").append("<h3>" + catalog[cart[i].productId].name + "</h3>");// ICI
+        $(".article:eq(" + i + ") .article-header").append("<h3>" + catalog[cart[i].product_id].name + "</h3>");// ICI
 
-        $(".article:eq(" + i + ") .article-header").append('<img src=' + catalog[cart[i].productId].thumb + ' alt="" srcset="" class="d-none d-md-block mw-100">');
+        $(".article:eq(" + i + ") .article-header").append('<img src=' + catalog[cart[i].product_id].thumb + ' alt="" srcset="" class="d-none d-md-block mw-100">');
 
         $(".article:eq(" + i + ")").append('<div class="col-12 col-md-6 d-flex align-items-center details">');
         $(".article:eq(" + i + ") .details").append("<button class='delete' id='del-"+i+"'>Supprimer</button>");
         $(".article:eq(" + i + ") .details").append('<div class="row d-flex align-items-center justify-content-between w-100 price-u">');
-        $(".article:eq(" + i + ") .price-u").append('<div class="col-4 col-md-4"> <p class="price-unite" id="price-' + i + '">' + catalog[cart[i].productId].price + '</p><p>€</p> </div>');
+        $(".article:eq(" + i + ") .price-u").append('<div class="col-4 col-md-4"> <p class="price-unite" id="price-' + i + '">' + catalog[cart[i].product_id].price + '</p><p>€</p> </div>');
         $(".article:eq(" + i + ") .details").append('<div class="col-4 col-md-4 quantity-stock">');
         $(".article:eq(" + i + ") .quantity-stock").append('<div class="row quantity-stock-container">');
         $(".article:eq(" + i + ") .quantity-stock-container").append('<div class="col-6 col-md-12"> <p class="d-md-none">Qt</p> <p class="d-none d-md-block">Quantité</p></div>');
@@ -35,7 +39,7 @@ $(document).ready(function () {
         
         var tempQuantity = parseInt($("#"+sum).html());
         
-        if (tempQuantity < catalog[cart[i].productId].quantity) {
+        if (tempQuantity < catalog[cart[i].product_id].quantity) {
             
             var price = btn.replace("sup", "price");
             var total = btn.replace("sup", "total");
