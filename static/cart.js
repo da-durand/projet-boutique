@@ -3,7 +3,6 @@ $(document).ready(function () {
     var totals = [];
 
     var cart = JSON.parse(sessionStorage.getItem("cart"));
-    console.log(cart);
 
 
     function renderCart(i) {
@@ -54,7 +53,22 @@ $(document).ready(function () {
 
                 renderTotal();
 
+
+                var get = parseInt(btn.replace("sup-", ""))
+
+                for (let i = 0; i < cart.length; i++) {
+                    
+                    if(get == cart[i].product_id){
+                        cart[i].quantity++
+
+                        sessionStorage.setItem("cart", JSON.stringify(cart))  
+                    }
+                    
+                }
+
             }
+
+
 
         })
 
@@ -111,6 +125,18 @@ $(document).ready(function () {
 
             renderTotal();
 
+            var get = parseInt(btn.replace("minus-", ""))
+
+                for (let i = 0; i < cart.length; i++) {
+                    
+                    if(get == cart[i].product_id){
+                        cart[i].quantity--
+
+                        sessionStorage.setItem("cart", JSON.stringify(cart))  
+                    }
+                    
+                }
+
         }
 
     })
@@ -123,8 +149,6 @@ $(document).ready(function () {
         
         renderTotal();
         
-
-
         
         var idItem = parseInt(btn.replace("del-", ""));
         
@@ -140,14 +164,6 @@ $(document).ready(function () {
             }     
         }
         
-        
-
-
-
-
-
-        console.log(cart);
-
 
     })
 })
